@@ -1,0 +1,15 @@
+{
+  "name": "crit",
+  "description": "Self-hosted marketplace for the crit plugin",
+  "owner": {
+    "name": "Robin Quintero",
+    "email": "rohaquinlop301@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "crit",
+      "description": "Design work with an independent critique: Claude makes the work, a fresh read-only critic reviews it against your rules and references, and Claude fixes what the critic finds before you see it.",
+      "source": "./"
+    }
+  ]
+}

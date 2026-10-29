@@ -1,0 +1,13 @@
+{
+  "name": "crit",
+  "version": "0.1.0",
+  "description": "Design work with an independent critique: Claude makes the work, a fresh read-only critic reviews it against your rules and references, and Claude fixes what the critic finds before you see it. For Figma, HTML prototypes, images, and copy. Pure Markdown, no dependencies, no telemetry.",
+  "author": {
+    "name": "Robin Quintero",
+    "email": "rohaquinlop301@gmail.com",
+    "url": "https://github.com/rohaquinlop"
+  },
+  "homepage": "https://github.com/rohaquinlop/crit",
+  "repository": "https://github.com/rohaquinlop/crit",
+  "license": "MIT"
+}
