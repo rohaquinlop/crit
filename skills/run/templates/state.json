@@ -1,0 +1,12 @@
+{
+  "brief": "<name>",
+  "phase": "intake",
+  "cycle": 1,
+  "round": 0,
+  "cap": 3,
+  "next_review": 1,
+  "cleared": false,
+  "cleared_review": null,
+  "fallback_review": false,
+  "updated": "<YYYY-MM-DDTHH:MM>"
+}
