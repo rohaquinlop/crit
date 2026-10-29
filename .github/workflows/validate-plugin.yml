@@ -1,0 +1,21 @@
+name: Validate plugin
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Claude Code CLI
+        run: curl -fsSL https://claude.ai/install.sh | bash
+
+      - name: Validate plugin and marketplace manifests
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          claude plugin validate . --strict
