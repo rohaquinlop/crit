@@ -50,7 +50,7 @@ Your own feedback is always a change. Claude never posts replies, approves work,
 
 ## Install
 
-**Moving from sdd-design?** Finish or save any work in progress first. If you made work in a cloud session, save its files to your local work folder. Your `design-specs/` folder stays as it is, and `/crit:setup` offers to remove sdd-design for you.
+**Moving from sdd-design?** Finish or save any work in progress first. If you made work in a cloud session, save its files to your local work folder. Your `design-specs/` folder stays as it is. `/crit:setup` then walks you through removing sdd-design: in Cowork, open **Customize** → **Plugins**, open **sdd-design**, and select **Uninstall**.
 
 ### In Claude Desktop (Cowork)
 
