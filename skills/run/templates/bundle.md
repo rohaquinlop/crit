@@ -40,6 +40,6 @@
 
 ## Earlier findings to verify
 
-<!-- After round 1: the blocking findings of the last review, by F- ID, with the fix you made. Omit in round 1. -->
+<!-- After round 1, or in round 1 of a brief resumed from sdd-design: the blocking findings of the last review, by F- ID, with the fix you made. Omit otherwise. -->
 
 -

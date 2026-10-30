@@ -32,6 +32,7 @@ Everything else you settle yourself: reading files, capturing evidence, choosing
      - Claude Code: start Claude in the work folder.
    - **No**: run the `crit:setup` skill first, then continue here.
 4. Whenever you create `design-specs/` or write a file under it, make sure `design-specs/.gitignore` exists and contains `*`, so git ignores the whole folder.
+5. If `<work-folder>/CLAUDE.md` has an sdd-design block (`<!-- sdd-design:start -->`) and no crit block (`<!-- crit:start -->`), tell the designer that it names the old workflow, and suggest `/crit:setup` to replace it. Do not change `CLAUDE.md` here.
 
 ## 1. Start or resume
 
@@ -39,9 +40,23 @@ Everything else you settle yourself: reading files, capturing evidence, choosing
    - If `$ARGUMENTS` names a folder in `design-specs/briefs/`, use it.
    - If `$ARGUMENTS` is feedback on existing work (pasted comments, "the client said..."), find the brief it is about from the conversation or the most recently changed brief; if it is not clear, list the briefs and ask. Then go to **6. Feedback**.
    - Otherwise it is a new request: go to **2. Intake**.
-2. For an existing brief, read `brief.md`, `checklist.md`, `rule-changes.md` (if it exists), `decisions.md`, `feedback.md`, `state.json`, and the latest review. A brief made with sdd-design has no `state.json`: create it from `${CLAUDE_SKILL_DIR}/templates/state.json`, with `next_review` set to one more than the highest `reviews/review-NN.md`.
+2. For an existing brief, read `brief.md`, `checklist.md`, `rule-changes.md` (if it exists), `decisions.md`, `feedback.md`, `state.json`, and the latest review. A brief made with sdd-design has no `state.json`: do **Resume an sdd-design brief** first.
 3. If `brief.md` says `Status: approved` and the designer asks for a change, set `Status: in-progress`, tell the designer the brief will need their approval again, and handle the request as feedback (**6. Feedback**).
 4. Continue from the phase in `state.json`.
+
+### Resume an sdd-design brief
+
+1. Read every file in `reviews/`. sdd-design saved designer feedback as `reviews/designer-NN.md`.
+2. Pending feedback is a `designer-NN.md` that no `review-NN.md` came after (compare the file dates). If you cannot tell, ask the designer whether the feedback in it is done. Copy each pending point into `feedback.md` as the designer's own feedback (`change`), with its `AC-` ID.
+3. Create `state.json` from `${CLAUDE_SKILL_DIR}/templates/state.json`:
+   - `next_review`: one more than the highest `review-NN.md`, or 1 if there is none.
+   - `cap`: the brief's `Review rounds` (3 if it is missing).
+   - `phase`, the first that applies:
+     - `approved`: `brief.md` says `Status: approved`.
+     - `make`: there is pending feedback, there is no review yet, or a checklist item is unchecked. The first round does the pending `change` items and the unchecked checklist items.
+     - `ready`: otherwise. If the latest review has no blocking findings, set `cleared` to `true` and `cleared_review` to its number.
+4. If the latest review has blocking findings, list them by `F-` ID under `## Earlier findings to verify` in the first bundle, so the critic can say which are fixed and which repeat.
+5. Record in `decisions.md` that the brief came from sdd-design and the phase you chose, with why.
 
 ## 2. Intake
 
