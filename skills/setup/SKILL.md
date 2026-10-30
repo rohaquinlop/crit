@@ -18,6 +18,16 @@ Talk to the designer in plain, non-technical words. Ask about one topic at a tim
    - Cowork cloud session: attach the whole `design-specs` folder to this session.
    - Claude Code: start Claude in the work folder.
 4. Whenever you create `design-specs/` or write a file under it, make sure `design-specs/.gitignore` exists and contains `*`, so git ignores the whole folder.
+5. If this project was used with sdd-design (`CLAUDE.md` has an `<!-- sdd-design:start -->` block, or a folder in `design-specs/briefs/` has no `state.json`), help the designer move to crit before anything else. Skip this if the designer already chose to keep sdd-design in this session, or if `claude plugin list` works and does not show `sdd-design`.
+   1. List the briefs in `design-specs/briefs/` whose `brief.md` does not say `Status: approved`. Tell the designer, in plain words:
+      - Everything in `design-specs/` stays: rules, notes, briefs, reviews, and the archive. crit reads the same files, and `/crit:run <name>` continues a brief.
+      - I recommend that you finish or save the work in progress before you remove sdd-design.
+      - If any of this work was made in a cloud session, save its files to the local work folder first.
+   2. Ask with `AskUserQuestion` whether to remove the sdd-design plugin: "Remove sdd-design (Recommended)", "It's already removed", or "Keep it for now". If they keep it, tell them that with both plugins installed, Claude may pick the wrong `setup` or `wrap-up`.
+   3. To remove it:
+      - Claude Code: run `claude plugin list`, find the plugin named `sdd-design@<marketplace>`, and run `claude plugin uninstall <that name>`. If the command fails, tell the designer to run `/plugin` and uninstall sdd-design there.
+      - Cowork: tell the designer to open **Customize** → **Plugins**, select **sdd-design**, and uninstall it.
+   4. Never move, change, or delete anything in `design-specs/` for this step.
 
 ## Steps
 
