@@ -16,5 +16,5 @@ Setup: Claude Desktop on a paid plan, a test folder with no `design-specs/`, and
 | 8 | Figma comments | Ask Claude to read the comments on a Figma file | Record whether the Figma tools can read comments. If not, feedback comes in by paste | |
 | 9 | HTML render | Run on an HTML request | The bundle has screenshots at each breakpoint. Record which browser tool was used | |
 | 10 | Resume | Close the session at the designer gate, start a new one, run `/crit:run <name>` | Claude continues from `state.json` without redoing the brief | |
-| 11 | sdd-design project | Run `/crit:run <name>` on a brief made with sdd-design | Claude creates `state.json` and continues; review numbers keep counting | |
+| 11 | sdd-design project | Run `/crit:run <name>` on a brief made with sdd-design | Claude creates `state.json` with the right phase and the brief's `Review rounds` as cap; review numbers keep counting; pending `designer-NN.md` points appear in `feedback.md`; open blocking findings appear in the first bundle; Claude suggests `/crit:setup` if `CLAUDE.md` has only the sdd-design block | |
 | 12 | Cloud session | Start a cloud session with `design-specs` attached, run a step | Files changed are listed with the save-back instructions | |
