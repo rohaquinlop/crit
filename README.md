@@ -50,6 +50,8 @@ Your own feedback is always a change. Claude never posts replies, approves work,
 
 ## Install
 
+**Moving from sdd-design?** Finish or save any work in progress first. If you made work in a cloud session, save its files to your local work folder. Your `design-specs/` folder stays as it is, and `/crit:setup` offers to remove sdd-design for you.
+
 ### In Claude Desktop (Cowork)
 
 Cowork needs a paid Claude plan.
@@ -108,7 +110,7 @@ your-work-folder/
 
 **How is it different from sdd-design?** Same rules, briefs, and folder. crit adds the independent critic, evidence bundles, feedback triage, one command for the whole flow, and a decisions log so work continues across sessions.
 
-**I used sdd-design. Should I keep it installed?** No. Uninstall sdd-design after you install crit. Both plugins have `setup` and `wrap-up`, so with both installed, Claude may pick the wrong one. Your rules, notes, briefs in progress, and archive stay in `design-specs/` and keep working: run `/crit:run <name>` to continue a brief, and run `/crit:setup` once to update the note in `CLAUDE.md`.
+**I used sdd-design. Should I keep it installed?** No. Both plugins have `setup` and `wrap-up`, so with both installed, Claude may pick the wrong one. Run `/crit:setup` once: it offers to remove sdd-design and updates the note in `CLAUDE.md`. Your rules, notes, briefs in progress, and archive stay in `design-specs/` and keep working: run `/crit:run <name>` to continue a brief.
 
 ## Status
 
