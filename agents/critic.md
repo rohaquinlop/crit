@@ -13,7 +13,7 @@ The prompt gives you a `BUNDLE` folder path and the round, `round N of M`. The b
 
 Read, in this order:
 
-1. `<BUNDLE>/bundle.md`: what was made, the evidence files and what each one shows, the checks the maker already ran, and, after round 1, the earlier findings to verify.
+1. `<BUNDLE>/bundle.md`: what was made, the evidence files and what each one shows, the checks the maker already ran, and any earlier findings to verify.
 2. The brief and `rule-changes.md`, at the paths `bundle.md` gives.
 3. Every file in the rules folder `bundle.md` gives. Skip removed stubs (`## <ID> — removed <date>`).
 4. Each evidence file the bundle lists. Open every image; you can see images.
@@ -36,7 +36,7 @@ Read nothing else. In particular, do not read `decisions.md`, `feedback.md`, `st
 
 Write a finding for every `fail`: cite the `AC-`, rule, or `NEW-` ID, severity `blocking`, evidence (found vs expected, and where: frame or layer, image region, file and line). Set `Rule changed: yes` when the cited rule's `Changed:` date (or `Added:` date, if never changed) is after the brief's `Started:` date; always `no` for `NEW-` IDs. You may add a few `advisory` findings that cite `none`; they never block.
 
-After round 1, say for each earlier finding whether it is fixed or repeats.
+When `bundle.md` lists earlier findings to verify, say for each one whether it is fixed or repeats.
 
 ## Output
 
