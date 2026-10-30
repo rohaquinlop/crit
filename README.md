@@ -108,6 +108,8 @@ your-work-folder/
 
 **How is it different from sdd-design?** Same rules, briefs, and folder. crit adds the independent critic, evidence bundles, feedback triage, one command for the whole flow, and a decisions log so work continues across sessions.
 
+**I used sdd-design. Should I keep it installed?** No. Uninstall sdd-design after you install crit. Both plugins have `setup` and `wrap-up`, so with both installed, Claude may pick the wrong one. Your rules, notes, briefs in progress, and archive stay in `design-specs/` and keep working: run `/crit:run <name>` to continue a brief, and run `/crit:setup` once to update the note in `CLAUDE.md`.
+
 ## Status
 
 Pre-1.0. Some Cowork behavior is unconfirmed. See [docs/cowork-checklist.md](./docs/cowork-checklist.md).
